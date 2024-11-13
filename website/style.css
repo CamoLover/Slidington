@@ -223,4 +223,20 @@ h1 {
     .features {
         grid-template-columns: 1fr;
     }
+    .code-block {
+        background: rgba(0,0,0,0.3);
+        padding: 0.5rem;
+        border-radius: 8px;
+        text-align: left;
+        overflow-x: auto;
+        margin: 0.5rem 0;
+    }
+    
+    .code-block pre {
+        color: #a0f0bc;
+        font-size: 12px;
+        white-space: pre;
+        margin: 0;
+    }
+
 }

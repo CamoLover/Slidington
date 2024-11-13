@@ -5,10 +5,8 @@
   --transition-time: 0.3s;
   position: relative;
   width: 100%;
-  max-width: 550px;
-  min-width: 300px;
-  max-height: 200px;
-  min-height: 50px;
+  width: clamp(100px, 40vw, 500px); /* Dynamic width scaling */
+  height: clamp(60px, 25vw, 200px); /* Dynamic height scaling */
   aspect-ratio: 16/9;
   cursor: pointer;
   overflow: hidden;
@@ -126,6 +124,7 @@
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
+
     font-size: 2.5rem;
     color: #fff;
     opacity: 0;
