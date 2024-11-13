@@ -5,12 +5,13 @@
     --dark: #1a1a1a;
     --light: #fefefe;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -29,7 +30,63 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 1rem;
+    animation: fadeIn 1s ease-in-out;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer-links a {
+    color: var(--accent);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 1rem;
+    }
+
+    .footer-links a {
+        margin: 0.5rem;
+    }
+}
+
 
 h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -73,6 +130,7 @@ h1 {
     border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease;
+    color: var(--light); /* Ensures better readability */
 }
 
 .feature-card:hover {
@@ -137,7 +195,7 @@ h1 {
 }
 
 .code-container code {
-    color: #a0f0f0;
+    color: #dcdcdc;
     font-family: monospace;
     font-size: 0.9rem;
     overflow-x: auto;
@@ -217,9 +275,10 @@ h1 {
     font-weight: bold;
     transition: transform 0.3s ease;
     margin: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 .cta-button:hover {
+    background-color: #fca311; /* Example of hover effect */
     transform: scale(1.05);
 }
 

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Slidington is a revolutionary button library that simplifies your web development. Get started with easy integration and customizable models.">
+    <meta name="keywords" content="Slidington, Button Library, Web Development, Custom Buttons">
     <title>Slidington - Revolutionary Button Library</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="websiteStyle.css">
+    <link rel="stylesheet" href="websiteStyle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slidington@1.2.0/dist/style.min.css">
     <script src="https://cdn.jsdelivr.net/npm/slidington@1.2.0/dist/script.min.js"></script>
     <!-- <link rel="stylesheet" href="../dist/style.min.css">
@@ -43,11 +45,28 @@
                     </div>
                 </div>
             </div>
-            <a href="https://github.com/CamoLover/Slidington" class="cta-button">Get Started</a>
+            <a href="#start" class="cta-button">Get Started</a>
         </div>
     </header>
+    <div class="features">
+        <div class="feature-card">
+            <i class="fas fa-code feature-icon"></i>
+            <h3>Simple Integration</h3>
+            <p>Just a few lines of code to get started</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-feather feature-icon"></i>
+            <h3>Lightweight</h3>
+            <p>Less than 5KB gzipped</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-universal-access feature-icon"></i>
+            <h3>Accessible</h3>
+            <p>Built with accessibility in mind</p>
+        </div>
+    </div>
 
-    <div class="demo-section">
+    <div class="demo-section" id="start">
         <h2>Button Models Showcase</h2>
         <div class="demo-grid">
             <div class="demo-item">
@@ -85,7 +104,7 @@
                         };
 
                         slidington.create({
-                            title: 'Take Action Portfolio',
+                            title: 'Take Action',
                             description: 'Click to trigger custom function',
                             model: 'triangle',
                             image: 'https://api.free-work.com/media/cache/resolve/blog_post_image_medium/le-refactoring-de-code-ou-comment-ameliorer-la-qualite-de-son-code-oWX81eC5oGa6fSHh.png', 
@@ -97,7 +116,7 @@
                 </div>
                 <div class="code-block">
                     <pre>slidington.create({
-    title: 'Take Action Portfolio',
+    title: 'Take Action',
     description: 'Click to trigger custom function',
     model: 'triangle',
     image: 'path/to/image.jpg', 
@@ -136,25 +155,26 @@
         </div>
     </div>
 
-    <div class="features">
-        <div class="feature-card">
-            <i class="fas fa-code feature-icon"></i>
-            <h3>Simple Integration</h3>
-            <p>Just a few lines of code to get started</p>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024 Slidington.</p>
+                <p>Made with ❤️ by CamoLover</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/CamoLover/Slidington" target="_blank">GitHub</a>
+                <a href="https://www.npmjs.com/package/slidington" target="_blank">NPM</a>
+                <a href="https://www.linkedin.com/in/camolover" target="_blank">LinkedIn</a>
+            </div>
         </div>
-        <div class="feature-card">
-            <i class="fas fa-feather feature-icon"></i>
-            <h3>Lightweight</h3>
-            <p>Less than 5KB gzipped</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-universal-access feature-icon"></i>
-            <h3>Accessible</h3>
-            <p>Built with accessibility in mind</p>
-        </div>
-    </div>
-
+    </footer>
+    
     <script>
+        document.querySelector('.cta-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('#start').scrollIntoView({ behavior: 'smooth' });
+        });
+
         function copyToClipboard(button) {
             const codeElement = button.parentElement.querySelector('code');
             const text = codeElement.textContent;
@@ -162,9 +182,11 @@
                 const icon = button.querySelector('i');
                 icon.classList.remove('fa-copy');
                 icon.classList.add('fa-check');
+                button.setAttribute('title', 'Code Copied!');
                 setTimeout(() => {
                     icon.classList.remove('fa-check');
                     icon.classList.add('fa-copy');
+                    button.removeAttribute('title');
                 }, 2000);
             });
         }
