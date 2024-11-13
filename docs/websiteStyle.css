@@ -5,19 +5,17 @@
     --dark: #1a1a1a;
     --light: #fefefe;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    box-sizing: none;
 }
 
 body {
     background-color: var(--dark);
     color: var(--light);
     line-height: 1.6;
+    font-family: Arial, sans-serif;
 }
 
 header {
@@ -25,6 +23,7 @@ header {
     padding: 2rem 1rem;
     text-align: center;
 }
+
 
 .hero {
     max-width: 1200px;
@@ -303,3 +302,30 @@ h1 {
     }
 
 }
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2b2b2b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 50px;
+}
+.linear-wipe {
+    font-size: 32px;
+    text-align: center;
+    background: linear-gradient(90deg, #FF6F61, #C7CEEA, #6B5B95, #88B04B, #F7CAC9, #92A8D1, #FFD966, #5D9B9B, #9E1030, #FEC8D8);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 1s linear infinite;
+} 
+
