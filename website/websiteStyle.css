@@ -45,6 +45,10 @@ h1 {
     opacity: 0.9;
     margin-bottom: 2rem;
 }
+.ver {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
 
 .install-instructions {
     background: rgba(0,0,0,0.2);
