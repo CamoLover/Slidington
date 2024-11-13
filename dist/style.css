@@ -37,6 +37,15 @@
   clip-path: polygon(0 0, 90% 0, 90% 100%, 0 100%);
 }
 
+/* Tear drop */
+.slidington-button[data-model="teardrop"] .slidington-button__image-side {
+  clip-path: ellipse(50% 70% at 50% 50%);
+}
+
+
+
+
+
 .slidington-button__image-side::before {
   content: '';
   position: absolute;

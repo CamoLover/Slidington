@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="websiteStyle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slidington@1.2.0/dist/style.min.css">
     <script src="https://cdn.jsdelivr.net/npm/slidington@1.2.0/dist/script.min.js"></script>
-    <!-- <link rel="stylesheet" href="../dist/style.min.css">
+    <!-- <link rel="stylesheet" href="../dist/stylesss.css">
     <script src="../dist/script.min.js"></script> -->
 </head>
 <body>
@@ -101,7 +101,7 @@
                         slidington.create({
                             title: 'Take Action',
                             description: 'Click to trigger custom function',
-                            model: 'triangle',
+                            model: 'concentric-squares',
                             image: 'https://api.free-work.com/media/cache/resolve/blog_post_image_medium/le-refactoring-de-code-ou-comment-ameliorer-la-qualite-de-son-code-oWX81eC5oGa6fSHh.png', 
                             action: 'showAlert',
                             buttonColor: '#23542a',
@@ -144,6 +144,33 @@
     link: 'https://www.npmjs.com/package/slidington',
     buttonColor: '#0fa191',
     arrowColor: '#141652'
+});</pre>
+                </div>
+            </div>
+            <div class="demo-item">
+                <h3 class="demo-title">teardrop Model</h3>
+                <div>
+                    <script>
+                        slidington.create({
+                            title: 'Teardrop',
+                            description: 'Hover the button for magic',
+                            model: 'teardrop',
+                            image: 'https://images.unsplash.com/photo-1607706189992-eae578626c86?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvZGV8ZW58MHx8MHx8fDA%3D',
+                            action: 'showAlert',
+                            buttonColor: '#edb928',
+                            arrowColor: '#1d252b'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'Teardrop',
+    description: 'Hover the button for magic',
+    model: 'teardrop',
+    image: 'path/to/image.jpg', 
+    action: 'showAlert',
+    buttonColor: '#edb928',
+    arrowColor: '#1d252b'
 });</pre>
                 </div>
             </div>
