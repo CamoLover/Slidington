@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slidington - Revolutionary Button Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slidington@latest/dist/style.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/slidington@latest/dist/script.min.js"></script> -->
+    <link rel="stylesheet" href="../dist/style.min.css">
+    <script src="../dist/script.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Slidington</h1>
+            <p class="tagline">The Ultimate Button Library That Will Change Web Development Forever</p>
+            <div class="install-options">
+                <div class="install-block">
+                    <h3>NPM Installation</h3>
+                    <div class="code-container">
+                        <code>npm install slidington</code>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="install-block">
+                    <h3>CDN Links</h3>
+                    <div class="code-container">
+                        <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slidington@latest/dist/style.min.css"&gt;</code>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="code-container">
+                        <code>&lt;script src="https://cdn.jsdelivr.net/npm/slidington@latest/dist/script.min.js"&gt;&lt;/script&gt;</code>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/CamoLover/Slidington" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <div class="demo-section">
+        <h2>Button Models Showcase</h2>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <h3 class="demo-title">Default Model</h3>
+                <div>
+                    <script>
+                        slidington.create({
+                            title: 'Visit Portfolio',
+                            description: 'Click to explore amazing projects',
+                            image: '#555555', 
+                            link: 'https://camolover.dev',
+                            buttonColor: '#3a8d8d',
+                            arrowColor: '#ffde00'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'Visit Portfolio',
+    description: 'Click to explore amazing projects',
+    image: '#555555',
+    link: 'https://camolover.dev',
+    buttonColor: '#3a8d8d',
+    arrowColor: '#ffde00'
+});</pre>
+                </div>
+            </div>
+
+            <div class="demo-item">
+                <h3 class="demo-title">Triangle Model</h3>
+                <div>
+                    <script>
+                        window.showAlert = function() {
+                            alert('Custom action triggered!');
+                        };
+
+                        slidington.create({
+                            title: 'Take Action Portfolio',
+                            description: 'Click to trigger custom function',
+                            model: 'triangle',
+                            image: 'https://api.free-work.com/media/cache/resolve/blog_post_image_medium/le-refactoring-de-code-ou-comment-ameliorer-la-qualite-de-son-code-oWX81eC5oGa6fSHh.png', 
+                            action: 'showAlert',
+                            buttonColor: '#23542a',
+                            arrowColor: '#ffde00'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'Take Action Portfolio',
+    description: 'Click to trigger custom function',
+    model: 'triangle',
+    image: 'path/to/image.jpg', 
+    action: 'showAlert',
+    buttonColor: '#23542a',
+    arrowColor: '#ffde00'
+});</pre>
+                </div>
+            </div>
+
+            <div class="demo-item">
+                <h3 class="demo-title">Solid Model</h3>
+                <div>
+                    <script>
+                        slidington.create({
+                            title: 'Visit NPM',
+                            description: 'Click to explore projects NPM',
+                            model: 'solid',
+                            image: '#442759',
+                            link: 'https://www.npmjs.com/package/slidington',
+                            buttonColor: '#c477fc',
+                            arrowColor: '#141652'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'Visit NPM',
+    description: 'Click to explore projects NPM',
+    model: 'solid',
+    image: '#442759',
+    link: 'https://www.npmjs.com/package/slidington',
+    buttonColor: '#c477fc',
+    arrowColor: '#141652'
+});</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <i class="fas fa-code feature-icon"></i>
+            <h3>Simple Integration</h3>
+            <p>Just a few lines of code to get started</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-feather feature-icon"></i>
+            <h3>Lightweight</h3>
+            <p>Less than 5KB gzipped</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-universal-access feature-icon"></i>
+            <h3>Accessible</h3>
+            <p>Built with accessibility in mind</p>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(button) {
+            const codeElement = button.parentElement.querySelector('code');
+            const text = codeElement.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = button.querySelector('i');
+                icon.classList.remove('fa-copy');
+                icon.classList.add('fa-check');
+                setTimeout(() => {
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-copy');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

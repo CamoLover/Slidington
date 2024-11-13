@@ -1,61 +1,76 @@
 .slidington-button {
-    --primary-color: #3a8d8d;
-    --secondary-color: #1f7a7a;
-    --text-color: #fefefe;
-    --transition-time: 0.3s;
-  
-    position: relative;
-    width: 100%;
-    max-width: 550px;
-    min-width: 300px;
+  --primary-color: #3a8d8d;
+  --secondary-color: #1f7a7a;
+  --text-color: #fefefe;
+  --transition-time: 0.3s;
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  min-width: 300px;
+  max-height: 200px;
+  min-height: 50px;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+  transition: box-shadow var(--transition-time), transform var(--transition-time), filter var(--transition-time);
+}
 
-    max-height: 200px;
-    min-height: 50px; 
+/* Default model clip path */
+.slidington-button__image-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  transition: width var(--transition-time) ease, transform var(--transition-time) ease;
+  overflow: hidden;
+}
 
-    aspect-ratio: 16 / 9;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    transition: box-shadow var(--transition-time), transform var(--transition-time), filter var(--transition-time);
-  }
-  
-  .slidington-button__image-side {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 100%;
-    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-    transition: width var(--transition-time) ease, transform var(--transition-time) ease;
-    overflow: hidden; /* Ensure the overlay stays within bounds */
-  }
-  
-  .slidington-button__image-side::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); 
-    transition: opacity var(--transition-time) ease;
-    z-index: 1; 
-  }
-  
-  .slidington-button__image-side .slidington-button__bg {
-    position: relative;
-    z-index: 0; 
-  }
-  
-  
-  
-  .slidington-button__bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-  }
+/* Triangle model */
+.slidington-button[data-model="triangle"] .slidington-button__image-side {
+  clip-path: polygon(0 0, 100% 0, 70% 50%, 100% 100%, 0 100%);
+}
+
+/* Solid model */
+.slidington-button[data-model="solid"] .slidington-button__image-side {
+  clip-path: polygon(0 0, 90% 0, 90% 100%, 0 100%);
+}
+
+.slidington-button__image-side::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.3);
+  transition: opacity var(--transition-time) ease;
+  z-index: 1;
+}
+
+.slidington-button__image-side.color-bg::before {
+  display: none;
+}
+
+.slidington-button__image-side .slidington-button__bg {
+  position: relative;
+  z-index: 0;
+}
+
+.slidington-button__bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* For solid color background */
+.slidington-button__image-side.color-bg {
+  background-color: var(--bg-color);
+}
   
   .slidington-button__color-side {
     position: absolute;
