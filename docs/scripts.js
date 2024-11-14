@@ -1,8 +1,3 @@
-document.querySelector('.cta-button').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.querySelector('#start').scrollIntoView({ behavior: 'smooth' });
-});
-
 function scrollToStart() {
     const startElement = document.querySelector('#start');
     if (startElement) {
