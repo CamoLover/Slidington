@@ -66,14 +66,31 @@ const slidington = {
         button.appendChild(arrow);
 
         button.addEventListener("click", function() {
-            if (action && typeof window[action] === 'function') {
-                window[action]();
+            if (action) {
+                try {
+                    // Check if action is a named function in the window object
+                    if (typeof window[action] === 'function') {
+                        window[action]();
+                    } 
+                    // If action is a stringified function, evaluate it
+                    else if (typeof action === 'string') {
+                        const func = eval(`(${action})`);
+                        if (typeof func === 'function') {
+                            func();
+                        } else {
+                            console.log("Provided action is not a function.");
+                        }
+                    } 
+                } catch (error) {
+                    console.error("Error executing action:", error);
+                }
             } else if (link) {
                 window.open(link, "_blank");
             } else {
                 console.log("No action or link provided.");
             }
         });
+        
 
         const currentScript = document.currentScript;
         currentScript.parentNode.insertBefore(button, currentScript);

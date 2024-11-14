@@ -1,5 +1,4 @@
-website/
+docs/
 *.log
-*.md
 dist/script.js
 dist/style.css
