@@ -1,6 +1,7 @@
 # Slidington 🎮
 
 A lightweight, customizable button library that brings interactive and stylish buttons to your web projects. With multiple models and easy integration, Slidington simplifies the process of creating engaging button elements.
+
 Hey there! This project started as a fun little side project and wasn’t really meant for production—though it totally *can* be used that way. It’s not the fanciest library out there, but I’ll keep it updated when I can.
 
 ![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)
