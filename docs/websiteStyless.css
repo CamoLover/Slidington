@@ -252,11 +252,11 @@ h1 {
 
 .code-block {
     background: rgba(0,0,0,0.3);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     text-align: left;
     overflow-x: auto;
-    margin: 2rem auto;
+    margin: 0.5rem 1rem;
     max-width: 600px;
 }
 
@@ -508,4 +508,8 @@ h1 {
         gap: 1rem;
         min-height: 500px;
       }
+  }
+
+  .codeMirror{
+    height: 100% !important;
   }

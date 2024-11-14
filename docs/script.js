@@ -3,6 +3,8 @@ document.querySelector('.cta-button').addEventListener('click', function(event) 
     document.querySelector('#start').scrollIntoView({ behavior: 'smooth' });
 });
 
+
+
 function copyToClipboard(button) {
     const codeElement = button.parentElement.querySelector('code');
     const text = codeElement.textContent;
@@ -120,3 +122,52 @@ if (hackerMode) {
 }
 }, 250);
 });
+
+
+let codeMirrorInstance;
+  
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize CodeMirror
+  codeMirrorInstance = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+    mode: 'javascript',
+    theme: 'material',
+    lineNumbers: true,
+    autoCloseBrackets: true,
+  });
+  codeMirrorInstance.setSize('auto', '100%');
+});
+
+function runCodeUpdate() {
+  const runButton = document.querySelector('.run-button i');
+  const code = codeMirrorInstance.getValue();
+  const previewDiv = document.getElementById('buttonPreview');
+
+  // Clear previous button
+  while (previewDiv.firstChild) {
+    previewDiv.removeChild(previewDiv.firstChild);
+  }
+
+  try {
+    if (!code.trim().startsWith('slidington.create(') || !code.trim().endsWith(');')) {
+      throw new Error('Only slidington.create() is allowed');
+    }
+
+    const configText = code
+      .replace('slidington.create(', '')
+      .replace(');', '')
+      .trim();
+
+    const script = document.createElement('script');
+    script.textContent = `slidington.create(${configText});`;
+    previewDiv.appendChild(script);
+
+    // Change icon to checkmark on successful run
+    runButton.className = 'fas fa-check';
+    setTimeout(() => {
+      runButton.className = 'fas fa-play';
+    }, 500);
+
+  } catch (error) {
+    previewDiv.innerHTML = `<div class="error-message">Error: ${error.message}</div>`;
+  }
+}
