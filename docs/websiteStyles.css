@@ -302,6 +302,7 @@ h1 {
 
 }
 
+
         /* Matrix rain effect for the easter egg */
         @keyframes matrix-rain {
             0% {
@@ -425,3 +426,86 @@ h1 {
     animation: shine 1s linear infinite;
 } 
 
+.builder-section {
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+  
+  .builder-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    min-height: 500px;
+  }
+  
+  .editor-panel {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .preview-panel {
+    color: #d4d4d4;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+  }
+  
+  textarea {
+    width: 80%;
+    height: 400px;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border: none;
+    padding: 1rem;
+    font-family: monospace;
+    resize: none;
+    outline: none;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .run-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .run-button:hover {
+    background: #45a049;
+  }
+
+  .error-message {
+    color: #ff4444;
+    padding: 1rem;
+    background: #ffebee;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-family: monospace;
+  }
+
+  @media (max-width: 768px) {
+    .builder-section {
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 0rem 0;
+      }
+    .builder-container {
+        display: block;
+        gap: 1rem;
+        min-height: 500px;
+      }
+  }

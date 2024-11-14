@@ -292,7 +292,67 @@
             </div>
         </div>
     </div>
+    <div class="builder-section">
+        <h3 class="demo-title">Build Your Own Button</h3>
+        <div class="builder-container">
+          <div class="editor-panel">
+            <textarea id="codeEditor">slidington.create({
+        title: "Custom",
+        description: "Edit me to customize!",
+        model: "teardrop",
+        image: "#3273a0",
+        link: "https://example.com",
+        buttonColor: "#324da0",
+        arrowColor: "#ffffff"
+    });</textarea>
+            <button class="run-button" onclick="updatePreview()">▶ Run</button>
+          </div>
+          <div class="preview-panel" id="buttonPreview">
+          </div>
+        </div>
+      </div>
 
+      <script>
+        function updatePreview() {
+          const code = document.getElementById('codeEditor').value;
+          const previewDiv = document.getElementById('buttonPreview');
+          
+          // Clear previous button
+          while (previewDiv.firstChild) {
+            previewDiv.removeChild(previewDiv.firstChild);
+          }
+          
+          try {
+            // Validate that the code only contains slidington.create
+            if (!code.trim().startsWith('slidington.create(') || !code.trim().endsWith(');')) {
+              throw new Error('Only slidington.create() is allowed');
+            }
+      
+            // Extract the configuration object
+            const configText = code
+              .replace('slidington.create(', '')  // Remove the function call start
+              .replace(');', '')                  // Remove the function call end
+              .trim();                            // Remove any whitespace
+      
+            // Create the script element directly
+            const script = document.createElement('script');
+            script.textContent = `slidington.create(${configText});`;
+            
+            // Add to preview
+            previewDiv.appendChild(script);
+      
+          } catch (error) {
+            previewDiv.innerHTML = `<div class="error-message">Error: ${error.message}</div>`;
+          }
+        }
+      
+        // Wait for both DOM and Slidington to be ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', updatePreview);
+        } else {
+          updatePreview();
+        }
+      </script>
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -314,6 +374,7 @@
     <div class="terminal-prompt">
         Access granted: HACKER MODE ACTIVATED_
     </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>
