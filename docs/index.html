@@ -8,10 +8,10 @@
     <title>Slidington - Revolutionary Button Library</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="websiteStyles.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slidington@1.4.0/dist/style.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/slidington@1.4.0/dist/script.min.js"></script>
-    <!-- <link rel="stylesheet" href="../dist/style.min.css"> -->
-    <!-- <script src="../dist/script.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slidington@1.5.0/dist/style.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/slidington@1.5.0/dist/script.min.js"></script>
+    <!-- <link rel="stylesheet" href="../dist/style.css">
+    <script src="../dist/script.min.js"></script> -->
 </head>
 <body>
     <style>
@@ -20,7 +20,6 @@
                 background-position: 200% center;
             }
         }
-
     </style>
     <header>
         <div class="header-container">
@@ -31,7 +30,7 @@
         <div class="hero">
             <h1>Slidington</h1>
             <p class="tagline">The Ultimate Button Library That Will Change Web Development Forever</p>
-            <h3 class="ver">current version : 1.4.0</h3>
+            <h3 class="ver">current version : 1.5.0</h3>
             <div class="install-options">
                 <div class="install-block">
                     <h3>NPM Installation</h3>
@@ -82,7 +81,7 @@
                 <div>
                     <script>
                         slidington.create({
-                            title: 'Visit Portfolio',
+                            title: 'Portfolio',
                             description: 'Click to explore amazing projects',
                             image: '#555555', 
                             link: 'https://camolover.dev',
@@ -187,6 +186,110 @@
 });</pre>
                 </div>
             </div>
+            <div class="demo-item">
+                <h3 class="demo-title">Wave Model</h3>
+                <div>
+                    <script>
+                        slidington.create({
+                            title: 'Start C++ dev',
+                            description: 'Click to start learning c++ and c++ projects !',
+                            model: 'wave',
+                            image: '#2b5c59',
+                            link: 'https://github.com/CamoLover/cpp-envrionment-setup',
+                            buttonColor: '#0f837a',
+                            arrowColor: '#1e1f48'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'Start C++ dev',
+    description: 'Click to start learning...',
+    model: 'wave',
+    image: '#2b5c59',
+    link: 'https://example.com',
+    buttonColor: '#0f837a',
+    arrowColor: '#1e1f48'
+});</pre>
+                </div>
+            </div>
+            <div class="demo-item">
+                <h3 class="demo-title">ZigZag Model</h3>
+                <div>
+                    <script>
+                        slidington.create({
+                            title: 'No idea what to put here',
+                            model: 'zigzag',
+                            image: '#25694b',
+                            action: 'showAlert',
+                            buttonColor: '#128f76',
+                            arrowColor: '#1b224d'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'No idea what to put here',
+    model: 'zigzag',
+    image: '#25694b',
+    action: 'showAlert',
+    buttonColor: '#128f76',
+    arrowColor: '#1b224d'
+});</pre>
+                </div>
+            </div>
+            <div class="demo-item">
+                <h3 class="demo-title">Stairs Model</h3>
+                <div>
+                    <script>
+                        slidington.create({
+                            title: 'linkedin',
+                            description: 'Click to visit my linkedin profile',
+                            model: 'stairs',
+                            image: '#1f5047',
+                            link: 'https://www.linkedin.com/in/evan-escabasse-8a205a264/',
+                            buttonColor: '#0d9488',
+                            arrowColor: '#101636'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'linkedin',
+    description: 'Click to visit...',
+    model: 'stairs',
+    image: '#1f5047',
+    link: 'https://example.com',
+    buttonColor: '#0d9488',
+    arrowColor: '#101636'
+});</pre>
+                </div>
+            </div>
+            <div class="demo-item">
+                <h3 class="demo-title">Outlet Model</h3>
+                <div>
+                    <script>
+                        slidington.create({
+                            title: 'Plug & play',
+                            model: 'outlet',
+                            image: 'https://i.ytimg.com/vi/jxO2D5Z7knM/maxresdefault.jpg',
+                            link: 'https://store.steampowered.com/app/2580210/SCP_Rulebreaker/',
+                            buttonColor: '#35b63b',
+                            arrowColor: '#141652'
+                        });
+                    </script>
+                </div>
+                <div class="code-block">
+                    <pre>slidington.create({
+    title: 'Plug & play',
+    model: 'outlet',
+    image: 'path/to/image.jpg',
+    link: 'https://example.com',
+    buttonColor: '#35b63b',
+    arrowColor: '#141652'
+});</pre>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -208,29 +311,9 @@
             </div>
         </div>
     </footer>
-    
-    
-    <script>
-        document.querySelector('.cta-button').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('#start').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        function copyToClipboard(button) {
-            const codeElement = button.parentElement.querySelector('code');
-            const text = codeElement.textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                const icon = button.querySelector('i');
-                icon.classList.remove('fa-copy');
-                icon.classList.add('fa-check');
-                button.setAttribute('title', 'Code Copied!');
-                setTimeout(() => {
-                    icon.classList.remove('fa-check');
-                    icon.classList.add('fa-copy');
-                    button.removeAttribute('title');
-                }, 2000);
-            });
-        }
-    </script>
+    <div class="terminal-prompt">
+        Access granted: HACKER MODE ACTIVATED_
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>

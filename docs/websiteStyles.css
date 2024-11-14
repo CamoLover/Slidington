@@ -295,14 +295,110 @@ h1 {
     }
     
     .code-block pre {
-        color: #a0f0bc;
-        font-size: 12px;
+        font-size: 10px;
         white-space: pre;
         margin: 0;
     }
 
 }
 
+        /* Matrix rain effect for the easter egg */
+        @keyframes matrix-rain {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .matrix-character {
+            position: fixed;
+            color: #0f0;
+            font-family: monospace;
+            font-size: 20px;
+            line-height: 20px;
+            white-space: nowrap;
+            z-index: 1;
+            text-shadow: 0 0 5px #0f0;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        /* Hacker mode styles */
+        .hacker-mode {
+            background-color: #000 !important;
+            color: #0f0 !important;
+            font-family: 'Courier New', monospace !important;
+            transition: all 0.5s ease;
+        }
+
+        .hacker-mode h1,
+        .hacker-mode h2,
+        .hacker-mode h3,
+        .hacker-mode p,
+        .hacker-mode a {
+            color: #0f0 !important;
+            text-shadow: 0 0 5px #0f0 !important;
+        }
+
+        .hacker-mode .feature-card {
+            background: #000 !important;
+            border: 1px solid #0f0 !important;
+            box-shadow: 0 0 10px #0f0 !important;
+        }
+
+        .hacker-mode .code-block {
+            background: #001100 !important;
+            border: 1px solid #0f0 !important;
+        }
+
+        .hacker-mode .cta-button {
+            background: #000 !important;
+            border: 1px solid #0f0 !important;
+            box-shadow: 0 0 10px #0f0 !important;
+        }
+
+        .glitch {
+            animation: glitch 1s linear infinite;
+            position: relative;
+        }
+
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+        .terminal-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #0f0;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            z-index: 1000;
+            display: none;
+        }
+
+        .terminal-prompt::after {
+            content: '█';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
 .header-container {
     width: 100%;
     display: flex;
