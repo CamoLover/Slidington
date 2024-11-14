@@ -3,6 +3,14 @@ document.querySelector('.cta-button').addEventListener('click', function(event) 
     document.querySelector('#start').scrollIntoView({ behavior: 'smooth' });
 });
 
+function scrollToStart() {
+    const startElement = document.querySelector('#start');
+    if (startElement) {
+        startElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.warn("Element with ID 'start' not found.");
+    }
+}
 
 
 function copyToClipboard(button) {
