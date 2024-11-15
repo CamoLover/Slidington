@@ -4,7 +4,7 @@ A lightweight, customizable button library that brings interactive and stylish b
 
 Hey there! This project started as a fun little side project and wasn’t really meant for production—though it totally *can* be used that way. It’s not the fanciest library out there, but I’ll keep it updated when I can.
 
-![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.6.1-blue.svg)
 ![Size](https://img.shields.io/badge/size-<5KB_gzipped-green.svg)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/camolover)
 [![](https://visitcount.itsvg.in/api?id=Slidington&label=View&color=1&icon=6&pretty=false)](https://visitcount.itsvg.in)
