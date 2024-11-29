@@ -1,6 +1,6 @@
 {
   "name": "slidington",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "A js librairie to create sliding button (hobby project, made for fun)",
   "main": "dist/script.min.js",
   "style": "dist/style.min.css",
